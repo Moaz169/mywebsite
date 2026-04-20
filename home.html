@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html">Login</a>
+</nav>
+
+<header>
+    <h1>🚗 Car Showroom</h1>
+    <p>BMW • Mercedes • Kia • Luxury & Performance</p>
+</header>
+
+<div class="products">
+
+    <div class="card" onclick="openProduct('bmw')">
+        <img src="image/bmw.jpg">
+        <h3>BMW</h3>
+    </div>
+
+    <div class="card" onclick="openProduct('mercedes')">
+        <img src="image/mercedes.jpg">
+        <h3>Mercedes</h3>
+    </div>
+
+    <div class="card" onclick="openProduct('kia')">
+        <img src="image/kia.jpg">
+        <h3>Kia</h3>
+    </div>
+
+</div>
+
+<script>
+function openProduct(name){
+    window.location.href = "product.html?item=" + name;
+}
+</script>
+
+</body>
+</html>

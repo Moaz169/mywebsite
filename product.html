@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+</nav>
+
+<div class="box" id="productBox"></div>
+
+<script>
+const products = {
+    bmw: {
+        name: "BMW",
+        desc: "Luxury performance car 🚗 powerful engine and sporty design.",
+        price: "2,500,000 EGP"
+    },
+    mercedes: {
+        name: "Mercedes",
+        desc: "Elegant comfort car ✨ premium interior and smooth driving.",
+        price: "3,000,000 EGP"
+    },
+    kia: {
+        name: "Kia",
+        desc: "Smart and affordable car 🚘 perfect for daily use.",
+        price: "1,200,000 EGP"
+    }
+};
+
+let params = new URLSearchParams(window.location.search);
+let item = params.get("item");
+
+let box = document.getElementById("productBox");
+
+if(products[item]){
+    box.innerHTML = `
+        <h1>${products[item].name}</h1>
+        <p>${products[item].desc}</p>
+        <h3>Price: ${products[item].price}</h3>
+    `;
+} else {
+    box.innerHTML = "<h1>Car not found</h1>";
+}
+</script>
+
+</body>
+</html>
